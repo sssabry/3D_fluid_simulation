@@ -1,15 +1,15 @@
 #include <iostream>
+#include <fstream>  
 #include "FluidCube.h"
 #include "FluidSim.h"
 
-// print a slice of the density array for debugging
-void print_density_slice(const FluidCube& cube, int z_slice) {
+void print_density_slice(std::ofstream& file, const FluidCube& cube, int z_slice) {
     int size = cube.size;
     for (int y = 0; y < size; ++y) {
         for (int x = 0; x < size; ++x) {
-            std::cout << cube.density[x][y][z_slice] << " ";
+            file << cube.density[x][y][z_slice] << " ";
         }
-        std::cout << std::endl;
+        file << std::endl;
     }
 }
 
@@ -26,17 +26,16 @@ int main() {
     cube.add_velocity(size / 2, size / 2, size / 2, 1.0f, 0.0f, 0.0f);  // Add initial velocity
 
     int num_steps = 10;
-
+    std::ofstream file("density_output.txt");
+    
     for (int step = 0; step < num_steps; ++step) {
-        std::cout << "Step " << step << std::endl;
-        sim.step(); 
+        sim.step();
+        file << "Step " << step << std::endl;
 
-        // Print a slice of the density array for debugging
-        std::cout << "Density slice at z=" << size / 2 << ":" << std::endl;
-        print_density_slice(cube, size / 2);
-
-        std::cout << std::endl;
+        print_density_slice(file, cube, 5); 
+        file << std::endl;  
     }
 
+    file.close(); 
     return 0;
 }

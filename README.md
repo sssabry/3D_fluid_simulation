@@ -12,3 +12,11 @@ This is a C++ adaptation of the versions presented in the resources above.
 - Jacobi method of solving diffusion equation [More Details](https://byjus.com/maths/jacobian-method/)
 - Poisson equation for pressure [More Details](https://barbagroup.github.io/essential_skills_RRC/numba/4/)
 - Navier Stokes Equations [More Details](https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_equations)
+
+## Visualization Tools:- heatmap.py generates animations of fluid simulations performed
+_how?_:
+1. ```cmake build ```
+2. ```cmake --build build ```
+3. ```./build/fluid_sim.exe ```
+4. ```python visualizers/heatmap.py ```
+![preview image](examples/animation_preview.png)
