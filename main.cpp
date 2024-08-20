@@ -14,7 +14,7 @@ void print_density_slice(std::ofstream& file, const FluidCube& cube, int z_slice
 }
 
 int main() {
-    int size = 10;  
+    int size = 20;  
     float dt = 0.1f; 
     float diffusion = 0.1f; 
     float viscosity = 0.1f;  
@@ -25,7 +25,7 @@ int main() {
     cube.add_density(size / 2, size / 2, size / 2, 10.0f);  // Add density in the center
     cube.add_velocity(size / 2, size / 2, size / 2, 1.0f, 0.0f, 0.0f);  // Add initial velocity
 
-    int num_steps = 10;
+    int num_steps = 25;
     std::ofstream file("density_output.txt");
     
     for (int step = 0; step < num_steps; ++step) {
