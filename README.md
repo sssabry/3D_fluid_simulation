@@ -1,5 +1,5 @@
 # Fluid-Simulation
-Physics engine for high-performance real-time 3D fluid simulation and volumetric rendering
+Physics-based simulation engine for high-performance real-time 3D fluid simulation and volumetric rendering
 
 ## Inspired by and based on:
 - an investigation I did during my internship @ Oxford Nanopore and a thermodynamics exploration i did for IB Math AA HL
